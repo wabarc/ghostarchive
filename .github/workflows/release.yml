@@ -76,3 +76,4 @@ jobs:
     uses: wabarc/.github/.github/workflows/reusable-releaser-go.yml@main
     with:
       product: ghostarchive
+      egress-policy: audit
