@@ -1,0 +1,78 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build
+    strategy:
+      matrix:
+        os: [ linux, freebsd, openbsd, dragonfly, windows, darwin ]
+        arch: [ amd64, 386 ]
+        include:
+          - os: linux
+            arch: arm
+            arm: 5
+          - os: linux
+            arch: arm
+            arm: 6
+          - os: linux
+            arch: arm
+            arm: 7
+          - os: linux
+            arch: arm64
+          - os: linux
+            arch: mips
+            mips: softfloat
+          - os: linux
+            arch: mips
+            mips: hardfloat
+          - os: linux
+            arch: mipsle
+            mipsle: softfloat
+          - os: linux
+            arch: mipsle
+            mipsle: hardfloat
+          - os: linux
+            arch: mips64
+          - os: linux
+            arch: mips64le
+          - os: linux
+            arch: ppc64
+          - os: linux
+            arch: ppc64le
+          - os: darwin
+            arch: arm64
+        exclude:
+          - os: darwin
+            arch: 386
+          - os: dragonfly
+            arch: 386
+      fail-fast: false
+    uses: wabarc/.github/.github/workflows/reusable-builder-go.yml@main
+    with:
+      product: ghostarchive
+      release: true
+      go-version: '^1.22'
+      go-os: ${{ matrix.os }}
+      go-arch: ${{ matrix.arch }}
+      go-arm: ${{ matrix.arm }}
+      go-mips: ${{ matrix.mips }}
+      go-mips64: ${{ matrix.mips64 }}
+      go-mipsle: ${{ matrix.mipsle }}
+      artifact-path: build/package/ghostarchive*
+
+  release:
+    name: Create and upload release
+    needs: [ build ]
+    permissions:
+      contents: write
+    uses: wabarc/.github/.github/workflows/reusable-releaser-go.yml@main
+    with:
+      product: ghostarchive
