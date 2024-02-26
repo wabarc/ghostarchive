@@ -93,10 +93,10 @@ func (wbrc *Archiver) archive(ctx context.Context, u *url.URL) (string, error) {
 		return loc, nil
 	}
 
-	// loc, err = wbrc.latest(ctx, u)
-	// if err != nil {
-	// 	loc = base + uri
-	// }
+	loc, err = wbrc.latest(ctx, u)
+	if err != nil {
+		return "", err
+	}
 
 	return loc, nil
 }
