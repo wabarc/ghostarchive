@@ -3,7 +3,7 @@ module github.com/wabarc/ghostarchive
 go 1.18
 
 require (
-	github.com/PuerkitoBio/goquery v1.9.0
+	github.com/PuerkitoBio/goquery v1.9.1
 	github.com/wabarc/helper v0.0.0-20230418130954-be7440352bcb
 	github.com/wabarc/logger v0.0.0-20210730133522-86bd3f31e792
 	github.com/wabarc/proxier v0.0.0-20230610135141-b55fe1536465
