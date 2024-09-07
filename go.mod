@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/PuerkitoBio/goquery v1.9.0
-	github.com/wabarc/helper v0.0.0-20230418130954-be7440352bcb
+	github.com/wabarc/helper v0.0.0-20240906105554-3673068835d4
 	github.com/wabarc/logger v0.0.0-20210730133522-86bd3f31e792
 	github.com/wabarc/proxier v0.0.0-20230610135141-b55fe1536465
 )
@@ -18,11 +18,11 @@ require (
 	github.com/kennygrant/sanitize v1.2.4 // indirect
 	github.com/klauspost/compress v1.16.5 // indirect
 	github.com/mattn/go-colorable v0.1.8 // indirect
-	github.com/mattn/go-isatty v0.0.18 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/refraction-networking/utls v1.3.2 // indirect
-	golang.org/x/crypto v0.19.0 // indirect
-	golang.org/x/net v0.21.0 // indirect
-	golang.org/x/sys v0.17.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
-	mvdan.cc/xurls/v2 v2.4.0 // indirect
+	golang.org/x/crypto v0.27.0 // indirect
+	golang.org/x/net v0.29.0 // indirect
+	golang.org/x/sys v0.25.0 // indirect
+	golang.org/x/text v0.18.0 // indirect
+	mvdan.cc/xurls/v2 v2.5.0 // indirect
 )
