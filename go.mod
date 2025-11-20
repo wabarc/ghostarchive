@@ -1,6 +1,6 @@
 module github.com/wabarc/ghostarchive
 
-go 1.18
+go 1.24.0
 
 require (
 	github.com/PuerkitoBio/goquery v1.9.0
@@ -20,9 +20,9 @@ require (
 	github.com/mattn/go-colorable v0.1.8 // indirect
 	github.com/mattn/go-isatty v0.0.18 // indirect
 	github.com/refraction-networking/utls v1.3.2 // indirect
-	golang.org/x/crypto v0.19.0 // indirect
-	golang.org/x/net v0.21.0 // indirect
-	golang.org/x/sys v0.17.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/crypto v0.45.0 // indirect
+	golang.org/x/net v0.47.0 // indirect
+	golang.org/x/sys v0.38.0 // indirect
+	golang.org/x/text v0.31.0 // indirect
 	mvdan.cc/xurls/v2 v2.4.0 // indirect
 )
