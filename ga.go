@@ -71,6 +71,7 @@ func (wbrc *Archiver) archive(ctx context.Context, u *url.URL) (string, error) {
 	}
 	req.Header.Add("User-Agent", userAgent)
 	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+	req.Header.Add("Referer", endpoint.wayback)
 	resp, err := wbrc.Client.Do(req)
 	if err != nil {
 		return "", err
